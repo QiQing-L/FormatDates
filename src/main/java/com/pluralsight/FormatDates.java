@@ -11,14 +11,16 @@ public class FormatDates {
         DateTimeFormatter mFullFormatter = DateTimeFormatter.ofPattern("MMMM d, yyyy");
         String mdyDate = today.format(mmddyyyFormatter);
         String mFullDate = today.format(mFullFormatter);
-        LocalDateTime wkDayDateTime =LocalDateTime.now();
 
-        //LocalDate Date = LocalDate.parse(today, mmddyyyFormatter);
+        LocalDateTime dateTimeNow =LocalDateTime.now();
+        DateTimeFormatter abbreviatedMDateTime = DateTimeFormatter.ofPattern("MMM, d, yyyy  HH:mm");
+        String abvMDateTime = dateTimeNow.format(abbreviatedMDateTime);
+
 
         System.out.println(mdyDate);
         System.out.println(today);
         System.out.println(mFullDate);
-        System.out.println(wkDayDateTime.getDayOfWeek()+ ", " + wkDayDateTime);
+        System.out.println(dateTimeNow.getDayOfWeek()+ ", " + abvMDateTime);
 
     }
 }
